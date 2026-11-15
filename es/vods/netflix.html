@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Channels Directory - Best IPTV Service Provider</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #020408;
+      color: #f8fafc;
+      overflow-x: hidden;
+    }
+    
+    /* Cinematic Header Nav Framework Layout Elements */
+    .navbar, .mobile-menu {
+      background: rgba(4, 7, 13, 0.8) !important;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+    .site-menu ul li a {
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+    .site-menu ul li a:hover {
+      color: #f43f5e !important;
+    }
+
+    /* Frosted Glass Sidebar Layout Structure */
+    .category-sidebar-card {
+      background: rgba(9, 13, 22, 0.65);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 16px;
+      padding: 24px;
+      position: sticky;
+      top: 100px;
+    }
+    .search-wrapper-box {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .search-wrapper-box i {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #475569;
+      font-size: 14px;
+    }
+    .category-search-input {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 12px 16px 12px 44px;
+      color: #fff;
+      font-size: 14px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .category-search-input:focus {
+      outline: none;
+      background: rgba(0, 0, 0, 0.5);
+      border-color: #f43f5e;
+      box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.15);
+    }
+    .category-scroll-container {
+      max-height: 55vh;
+      overflow-y: auto;
+      padding-right: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    
+    /* Optimized Custom Fine Scrollbar Viewport Layers */
+    .category-scroll-container::-webkit-scrollbar {
+      width: 4px;
+    }
+    .category-scroll-container::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .category-scroll-container::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+    }
+    .category-scroll-container::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Sidebar Dynamic Selection Target Chips */
+    .category-btn {
+      background: rgba(255, 255, 255, 0.01);
+      color: #64748b;
+      border: 1px solid rgba(255, 255, 255, 0.02) !important;
+      border-radius: 10px !important;
+      padding: 12px 16px;
+      font-weight: 500;
+      font-size: 14px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .category-btn .cat-label-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .category-btn .cat-badge-counter {
+      font-size: 11px;
+      background: rgba(255, 255, 255, 0.04);
+      color: #475569;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .category-btn:hover {
+      background: rgba(255, 255, 255, 0.03);
+      color: #cbd5e1;
+      transform: translateX(4px);
+    }
+    .category-btn.active {
+      background: linear-gradient(135deg, #f43f5e, #be123c) !important;
+      color: #ffffff !important;
+      border-color: #f43f5e !important;
+      box-shadow: 0 4px 20px rgba(244, 63, 94, 0.2);
+    }
+    .category-btn.active .cat-badge-counter {
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+    }
+
+    /* Multimedia Visual TV Theater Grid Items Aspect Cards */
+    .movie-theater-card {
+      background: rgba(9, 13, 22, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .movie-poster-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 145%; /* Cinematic Vertical Layout Matrix Ratio */
+      background: #05070c;
+      overflow: hidden;
+    }
+    .movie-poster-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+    .movie-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(2, 4, 8, 0.95) 10%, rgba(2, 4, 8, 0.3) 60%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+    }
+    .movie-theater-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(244, 63, 94, 0.3);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+    }
+    .movie-theater-card:hover .movie-poster-img {
+      transform: scale(1.05);
+      filter: brightness(0.75);
+    }
+    .movie-theater-card:hover .movie-card-overlay {
+      opacity: 1;
+    }
+    .movie-details-pane {
+      padding: 14px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: rgba(5, 8, 14, 0.7);
+    }
+    .movie-title-text {
+      font-weight: 600;
+      color: #f1f5f9;
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 6px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 38px;
+    }
+    .movie-tag-badge {
+      font-size: 10px;
+      background: rgba(244, 63, 94, 0.08);
+      color: #f43f5e;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    /* Specific styling for series episode badge tracking */
+    .series-ep-badge {
+      font-size: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #94a3b8;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    /* Premium Frame Control Metric Pagination System Nodes */
+    .page-link-custom {
+      background: rgba(255, 255, 255, 0.02);
+      color: #64748b;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      min-width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 3px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+    }
+    .page-link-custom:hover:not(.disabled):not(.active) {
+      background: rgba(255, 255, 255, 0.06);
+      color: #f1f5f9;
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+    .page-link-custom.active {
+      background: #f43f5e;
+      color: #fff;
+      border-color: #f43f5e;
+      box-shadow: 0 0 15px rgba(244, 63, 94, 0.25);
+    }
+    .page-link-custom.disabled {
+      opacity: 0.2;
+      cursor: not-allowed;
+    }
+
+    /* Synchronized Execution Phase Loading Module */
+    #loading_spinner {
+      padding: 80px 0;
+      text-align: center;
+    }
+    .spinner-icon {
+      width: 44px;
+      height: 44px;
+      border: 3px solid rgba(255, 255, 255, 0.03);
+      border-top-color: #f43f5e;
+      border-radius: 50%;
+      animation: spin 0.9s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+      margin: 0 auto 20px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Container for the Grid */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Card Styling */
+.glass-card {
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.6), rgba(2, 4, 8, 0.8));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 24px;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 2px;
+    background: linear-gradient(90deg, #f43f5e, transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.glass-card:hover {
+    border-color: rgba(244, 63, 94, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.glass-card:hover::before { opacity: 1; }
+
+.item-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.item-desc {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top py-4" style="background: rgba(6, 8, 12, 0.95); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+    <div class="container d-flex justify-content-between align-items-center">
+      
+      <div class="logo"> 
+        <a href="../../index.html" class="d-flex align-items-center">
+          <img src="../../assets/iptv-v2/images/logo.png" alt="Bobres IPTV" style="max-height: 65px; width: auto; object-fit: contain;"> 
+        </a> 
+      </div>
+      
+      <div class="site-menu d-none d-lg-block">
+        <ul class="d-flex list-unstyled gap-4 m-0">
+          <li><a href="../../index.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 15px;">Inicio</a></li>
+          <li><a href="../../reseller.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 15px;">Revendedor</a></li>
+          <li><a href="../../blog.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 15px;">Blog</a></li>
+          <li><a href="../../tickets.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 15px;">Entradas</a></li>
+          <li><a href="../../contact.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 15px;">Contáctenos</a></li>
+          <li><a href="../../about.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 15px;">Sobre Nosotros</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <main style="margin-top: 130px; min-height: 80vh;">
+    <section class="content-section">
+      <div class="container">
+        
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-12 text-center" style="margin-bottom: 48px;">
+            <div class="btn-group mb-4" role="group" style="gap: 12px; display: inline-flex;">
+              <button style="background: rgba(255,255,255,0.04); color: #fff; border: 1px solid rgba(255,255,255,0.06); border-radius: 30px; padding: 10px 24px;" onclick="window.location.href = '../../index.html';" type="button" class="btn btn-dark">
+                <i class="fas fa-home" style="margin-right: 8px; color: #64748b;"></i> Home
+              </button> 
+              <button style="background: #ffffff; color: #020408; border: none; border-radius: 30px; padding: 10px 24px; font-weight: 600;" onclick="window.location.href = '../../index.html#pricing-tab-content';" type="button" class="btn btn-light">
+                <i class="fas fa-bolt" style="margin-right: 8px; color: #f43f5e;"></i> Offers
+              </button> 
+            </div>
+
+            <h2 style="font-size: 38px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 14px; background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">TV CHANNELS LIBRARY</h2>
+            <a href="javascript:history.go(-1)" style="background: rgba(255,255,255,0.02); color: #64748b; border: 1px solid rgba(255,255,255,0.05); border-radius: 30px; padding: 8px 22px; font-size: 13px; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s;">
+              <i class="fas fa-arrow-left"></i> Back
+            </a>
+          </div>
+        </div>
+ 
+
+
+         <div class="container">
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6">
+                <h1 class="display-6 fw-bold">Netflix Catalog</h1>
+            </div>
+          
+        </div>
+ 
+
+  <div class="row mb-4"><div class="col-12"><input type="search" id="vodSearch" class="form-control form-control-lg" placeholder="Search Netflix by title or description..." aria-label="Search catalog"></div></div><p id="vodCount" style="color:#94a3b8;font-size:14px;"></p><div class="row g-4" id="mediaGrid" data-vod-type="netflix" data-vod-src="../../data/vods/netflix.json">
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Dick Johnson Is Dead            </div>
+            
+                        <div class="item-desc">
+                As her father nears the end of his life, filmmaker Kirsten Johnson stages his death in inventive and comical ways to help them both face the inevitable.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Blood &amp; Water            </div>
+            
+                        <div class="item-desc">
+                After crossing paths at a party, a Cape Town teen sets out to prove whether a private-school swimming star is her sister who was abducted at birth.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Ganglands            </div>
+            
+                        <div class="item-desc">
+                To protect his family from a powerful drug lord, skilled thief Mehdi and his expert team of robbers are pulled into a violent and deadly turf war.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Jailbirds New Orleans            </div>
+            
+                        <div class="item-desc">
+                Feuds, flirtations and toilet talk go down among the incarcerated women at the Orleans Justice Center in New Orleans on this gritty reality series.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Kota Factory            </div>
+            
+                        <div class="item-desc">
+                In a city of coaching centers known to train India’s finest collegiate minds, an earnest but unexceptional student and his friends navigate campus life.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Midnight Mass            </div>
+            
+                        <div class="item-desc">
+                The arrival of a charismatic young priest brings glorious miracles, ominous mysteries and renewed religious fervor to a dying town desperate to believe.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                My Little Pony: A New Generation            </div>
+            
+                        <div class="item-desc">
+                Equestria&#039;s divided. But a bright-eyed hero believes Earth Ponies, Pegasi and Unicorns should be pals — and, hoof to heart, she’s determined to prove it.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Sankofa            </div>
+            
+                        <div class="item-desc">
+                On a photo shoot in Ghana, an American model slips back in time, becomes enslaved on a plantation and bears witness to the agony of her ancestral past.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                The Great British Baking Show            </div>
+            
+                        <div class="item-desc">
+                A talented batch of amateur bakers face off in a 10-week competition, whipping up their best dishes in the hopes of being named the U.K.&#039;s best.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                The Starling            </div>
+            
+                        <div class="item-desc">
+                A woman adjusting to life after a loss contends with a feisty bird that&#039;s taken over her garden — and a husband who&#039;s struggling to find a way forward.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Vendetta: Truth, Lies and The Mafia            </div>
+            
+                        <div class="item-desc">
+                Sicily boasts a bold &quot;Anti-Mafia&quot; coalition. But what happens when those trying to bring down organized crime are accused of being criminals themselves?            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Bangkok Breaking            </div>
+            
+                        <div class="item-desc">
+                Struggling to earn a living in Bangkok, a man joins an emergency rescue service and realizes he must unravel a citywide conspiracy.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Je Suis Karl            </div>
+            
+                        <div class="item-desc">
+                After most of her family is murdered in a terrorist bombing, a young woman is unknowingly lured into joining the very group that killed them.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Confessions of an Invisible Girl            </div>
+            
+                        <div class="item-desc">
+                When the clever but socially-awkward Tetê joins a new school, she&#039;ll do anything to fit in. But the queen bee among her classmates has other ideas.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Crime Stories: India Detectives            </div>
+            
+                        <div class="item-desc">
+                Cameras following Bengaluru police on the job offer a rare glimpse into the complex and challenging inner workings of four major crime investigations.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Dear White People            </div>
+            
+                        <div class="item-desc">
+                Students of color navigate the daily slights and slippery politics of life at an Ivy League college that&#039;s not nearly as &quot;post-racial&quot; as it thinks.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Europe&#039;s Most Dangerous Man: Otto Skorzeny in Spain            </div>
+            
+                        <div class="item-desc">
+                Declassified documents reveal the post-WWII life of Otto Skorzeny, a close Hitler ally who escaped to Spain and became an adviser to world presidents.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Falsa identidad            </div>
+            
+                        <div class="item-desc">
+                Strangers Diego and Isabel flee their home in Mexico and pretend to be a married couple to escape his drug-dealing enemies and her abusive husband.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Intrusion            </div>
+            
+                        <div class="item-desc">
+                After a deadly home invasion at a couple’s new dream house, the traumatized wife searches for answers — and learns the real danger is just beginning.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Jaguar            </div>
+            
+                        <div class="item-desc">
+                In the 1960s, a Holocaust survivor joins a group of self-trained spies who seek justice against Nazis fleeing to Spain to hide after WWII.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Monsters Inside: The 24 Faces of Billy Milligan            </div>
+            
+                        <div class="item-desc">
+                In the late 1970s, an accused serial rapist claims multiple personalities control his behavior, setting off a legal odyssey that captivates America.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Resurrection: Ertugrul            </div>
+            
+                        <div class="item-desc">
+                When a good deed unwittingly endangers his clan, a 13th-century Turkish warrior agrees to fight a sultan&#039;s enemies in exchange for new tribal land.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Avvai Shanmughi            </div>
+            
+                        <div class="item-desc">
+                Newly divorced and denied visitation rights with his daughter, a doting father disguises himself as a gray-haired nanny in order to spend time with her.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Go! Go! Cory Carson: Chrissy Takes the Wheel            </div>
+            
+                        <div class="item-desc">
+                From arcade games to sled days and hiccup cures, Cory Carson’s curious little sister Chrissy speeds off on her own for fun and adventure all over town!            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Jeans            </div>
+            
+                        <div class="item-desc">
+                When the father of the man she loves insists that his twin sons marry twin sisters, a woman creates an alter ego that might be a bit too convincing.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Love on the Spectrum            </div>
+            
+                        <div class="item-desc">
+                Finding love can be hard for anyone. For young adults on the autism spectrum, exploring the unpredictable world of dating is even more complicated.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Minsara Kanavu            </div>
+            
+                        <div class="item-desc">
+                A tangled love triangle ensues when a man falls for a woman studying to become a nun — and she falls for the friend he enlists to help him pursue her.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Grown Ups            </div>
+            
+                        <div class="item-desc">
+                Mourning the loss of their beloved junior high basketball coach, five middle-aged pals reunite at a lake house and rediscover the joys of being a kid.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Dark Skies            </div>
+            
+                        <div class="item-desc">
+                A family’s idyllic suburban life shatters when an alien force invades their home, and as they struggle to convince others of the deadly threat.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Paranoia            </div>
+            
+                        <div class="item-desc">
+                Blackmailed by his company&#039;s CEO, a low-level employee finds himself forced to spy on the boss&#039;s rival and former mentor.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Ankahi Kahaniya            </div>
+            
+                        <div class="item-desc">
+                As big city life buzzes around them, lonely souls discover surprising sources of connection and companionship in three tales of love, loss and longing.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Chicago Party Aunt            </div>
+            
+                        <div class="item-desc">
+                Chicago Party Aunt Diane is an idolized troublemaker with a talent for avoiding adulthood — and a soft spot for her soul-searching nephew.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Sex Education            </div>
+            
+                        <div class="item-desc">
+                Insecure Otis has all the answers when it comes to sex advice, thanks to his therapist mom. So rebel Maeve proposes a school sex-therapy clinic.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Squid Game            </div>
+            
+                        <div class="item-desc">
+                Hundreds of cash-strapped players accept a strange invitation to compete in children&#039;s games. Inside, a tempting prize awaits — with deadly high stakes.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Tayo and Little Wizards            </div>
+            
+                        <div class="item-desc">
+                Tayo speeds into an adventure when his friends get kidnapped by evil magicians invading their city in search of a magical gemstone.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                The Father Who Moves Mountains            </div>
+            
+                        <div class="item-desc">
+                When his son goes missing during a snowy hike in the mountains, a retired intelligence officer will stop at nothing — and risk everything — to find him.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                The Stronghold            </div>
+            
+                        <div class="item-desc">
+                Tired of the small-time grind, three Marseille cops get a chance to bust a major drug network. But lines blur when a key informant makes a big ask.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Angry Birds            </div>
+            
+                        <div class="item-desc">
+                Birds Red, Chuck and their feathered friends have lots of adventures while guarding eggs in their nest that pesky pigs keep trying to steal.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Birth of the Dragon            </div>
+            
+                        <div class="item-desc">
+                A young Bruce Lee angers kung fu traditionalists by teaching outsiders, leading to a showdown with a Shaolin master in this film based on real events.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Chhota Bheem            </div>
+            
+                        <div class="item-desc">
+                A brave, energetic little boy with superhuman powers leads his friends on exciting adventures to guard their fellow Dholakpur villagers from evil.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                He-Man and the Masters of the Universe            </div>
+            
+                        <div class="item-desc">
+                Mighty teen Adam and his heroic squad of misfits discover the legendary power of Grayskull — and their destiny to defend Eternia from sinister Skeletor.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Jaws            </div>
+            
+                        <div class="item-desc">
+                When an insatiable great white shark terrorizes Amity Island, a police chief, an oceanographer and a grizzled shark hunter seek to destroy the beast.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Jaws 2            </div>
+            
+                        <div class="item-desc">
+                Four years after the last deadly shark attacks, police chief Martin Brody fights to protect Amity Island from another killer great white.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Jaws 3            </div>
+            
+                        <div class="item-desc">
+                After the staff of a marine theme park try to capture a young great white shark, they discover its mother has invaded the enclosure and is out for blood.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Jaws: The Revenge            </div>
+            
+                        <div class="item-desc">
+                After another deadly shark attack, Ellen Brody has had enough of Amity Island and moves to the Caribbean – but a great white shark follows her there.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                My Heroes Were Cowboys            </div>
+            
+                        <div class="item-desc">
+                Robin Wiltshire&#039;s painful childhood was rescued by Westerns. Now he lives on the frontier of his dreams, training the horses he loves for the big screen.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Safe House            </div>
+            
+                        <div class="item-desc">
+                Young CIA operative Matt Weston must get a dangerous criminal out of an agency safe house that&#039;s come under attack and get him to a securer location.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                The Smart Money Woman            </div>
+            
+                        <div class="item-desc">
+                Five glamorous millennials strive for success as they juggle careers, finances, love and friendships. Based on Arese Ugwu&#039;s 2016 best-selling novel.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Training Day            </div>
+            
+                        <div class="item-desc">
+                A rookie cop with one day to prove himself to a veteran LAPD narcotics officer receives a crash course in his mentor&#039;s questionable brand of justice.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Castle and Castle            </div>
+            
+                        <div class="item-desc">
+                A pair of high-powered, successful lawyers find themselves defending opposite interests of the justice system, causing a strain on their happy marriage.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Dharmakshetra            </div>
+            
+                        <div class="item-desc">
+                After the ancient Great War, the god Chitragupta oversees a trial to determine who were the battle&#039;s true heroes and villains.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                InuYasha the Movie 2: The Castle Beyond the Looking Glass            </div>
+            
+                        <div class="item-desc">
+                With their biggest foe seemingly defeated, InuYasha and his friends return to everyday life. But the peace is soon shattered by an emerging new enemy.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                InuYasha the Movie 3: Swords of an Honorable Ruler            </div>
+            
+                        <div class="item-desc">
+                The Great Dog Demon beaqueathed one of the Three Swords of the Fang to each of his two sons. Now the evil power of the third sword has been awakened.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                InuYasha the Movie 4: Fire on the Mystic Island            </div>
+            
+                        <div class="item-desc">
+                Ai, a young half-demon who has escaped from Horai Island to try to help her people, returns with potential saviors InuYasha, Sesshomaru and Kikyo.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                InuYasha the Movie: Affections Touching Across Time            </div>
+            
+                        <div class="item-desc">
+                A powerful demon has been sealed away for 200 years. But when the demon&#039;s son is awakened, the fate of the world is in jeopardy.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Nailed It            </div>
+            
+                        <div class="item-desc">
+                Home bakers with a terrible track record take a crack at re-creating edible masterpieces for a $10,000 prize. It&#039;s part reality contest, part hot mess.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Naruto Shippuden the Movie: Blood Prison            </div>
+            
+                        <div class="item-desc">
+                Mistakenly accused of an attack on the Fourth Raikage, ninja Naruto is imprisoned in the impenetrable Hozuki Castle and his powers are sealed.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Naruto Shippûden the Movie: Bonds            </div>
+            
+                        <div class="item-desc">
+                When strange ninjas ambush the village of Konohagakure, it&#039;s up to adolescent ninja Naruto and his long-missing pal, Sasuke, to save the planet.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Naruto Shippûden the Movie: The Will of Fire            </div>
+            
+                        <div class="item-desc">
+                When four out of five ninja villages are destroyed, the leader of the one spared tries to find the true culprit and protect his land.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Naruto Shippuden: The Movie            </div>
+            
+                        <div class="item-desc">
+                The adventures of adolescent ninja Naruto Uzumaki continue as he&#039;s tasked with protecting a priestess from a demon – but to do so, he must die.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    
+    </section>
+  </main>
+ 
+
+<script src="../../assets/js/vod-catalog.js"></script>
+</body>
+</html>

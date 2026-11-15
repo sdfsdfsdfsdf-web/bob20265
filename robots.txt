@@ -1,0 +1,5 @@
+# robots.txt for Bobres IPTV
+User-agent: *
+Disallow: /data/
+
+Sitemap: https://bobres-tv.com/sitemap.xml

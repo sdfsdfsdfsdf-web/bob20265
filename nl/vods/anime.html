@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Channels Directory - Best IPTV Service Provider</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #020408;
+      color: #f8fafc;
+      overflow-x: hidden;
+    }
+    
+    /* Cinematic Header Nav Framework Layout Elements */
+    .navbar, .mobile-menu {
+      background: rgba(4, 7, 13, 0.8) !important;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+    .site-menu ul li a {
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+    .site-menu ul li a:hover {
+      color: #f43f5e !important;
+    }
+
+    /* Frosted Glass Sidebar Layout Structure */
+    .category-sidebar-card {
+      background: rgba(9, 13, 22, 0.65);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 16px;
+      padding: 24px;
+      position: sticky;
+      top: 100px;
+    }
+    .search-wrapper-box {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .search-wrapper-box i {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #475569;
+      font-size: 14px;
+    }
+    .category-search-input {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 12px 16px 12px 44px;
+      color: #fff;
+      font-size: 14px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .category-search-input:focus {
+      outline: none;
+      background: rgba(0, 0, 0, 0.5);
+      border-color: #f43f5e;
+      box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.15);
+    }
+    .category-scroll-container {
+      max-height: 55vh;
+      overflow-y: auto;
+      padding-right: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    
+    /* Optimized Custom Fine Scrollbar Viewport Layers */
+    .category-scroll-container::-webkit-scrollbar {
+      width: 4px;
+    }
+    .category-scroll-container::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .category-scroll-container::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+    }
+    .category-scroll-container::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Sidebar Dynamic Selection Target Chips */
+    .category-btn {
+      background: rgba(255, 255, 255, 0.01);
+      color: #64748b;
+      border: 1px solid rgba(255, 255, 255, 0.02) !important;
+      border-radius: 10px !important;
+      padding: 12px 16px;
+      font-weight: 500;
+      font-size: 14px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .category-btn .cat-label-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .category-btn .cat-badge-counter {
+      font-size: 11px;
+      background: rgba(255, 255, 255, 0.04);
+      color: #475569;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .category-btn:hover {
+      background: rgba(255, 255, 255, 0.03);
+      color: #cbd5e1;
+      transform: translateX(4px);
+    }
+    .category-btn.active {
+      background: linear-gradient(135deg, #f43f5e, #be123c) !important;
+      color: #ffffff !important;
+      border-color: #f43f5e !important;
+      box-shadow: 0 4px 20px rgba(244, 63, 94, 0.2);
+    }
+    .category-btn.active .cat-badge-counter {
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+    }
+
+    /* Multimedia Visual TV Theater Grid Items Aspect Cards */
+    .movie-theater-card {
+      background: rgba(9, 13, 22, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .movie-poster-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 145%; /* Cinematic Vertical Layout Matrix Ratio */
+      background: #05070c;
+      overflow: hidden;
+    }
+    .movie-poster-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+    .movie-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(2, 4, 8, 0.95) 10%, rgba(2, 4, 8, 0.3) 60%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+    }
+    .movie-theater-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(244, 63, 94, 0.3);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+    }
+    .movie-theater-card:hover .movie-poster-img {
+      transform: scale(1.05);
+      filter: brightness(0.75);
+    }
+    .movie-theater-card:hover .movie-card-overlay {
+      opacity: 1;
+    }
+    .movie-details-pane {
+      padding: 14px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: rgba(5, 8, 14, 0.7);
+    }
+    .movie-title-text {
+      font-weight: 600;
+      color: #f1f5f9;
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 6px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 38px;
+    }
+    .movie-tag-badge {
+      font-size: 10px;
+      background: rgba(244, 63, 94, 0.08);
+      color: #f43f5e;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    /* Specific styling for series episode badge tracking */
+    .series-ep-badge {
+      font-size: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #94a3b8;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    /* Premium Frame Control Metric Pagination System Nodes */
+    .page-link-custom {
+      background: rgba(255, 255, 255, 0.02);
+      color: #64748b;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      min-width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 3px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+    }
+    .page-link-custom:hover:not(.disabled):not(.active) {
+      background: rgba(255, 255, 255, 0.06);
+      color: #f1f5f9;
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+    .page-link-custom.active {
+      background: #f43f5e;
+      color: #fff;
+      border-color: #f43f5e;
+      box-shadow: 0 0 15px rgba(244, 63, 94, 0.25);
+    }
+    .page-link-custom.disabled {
+      opacity: 0.2;
+      cursor: not-allowed;
+    }
+
+    /* Synchronized Execution Phase Loading Module */
+    #loading_spinner {
+      padding: 80px 0;
+      text-align: center;
+    }
+    .spinner-icon {
+      width: 44px;
+      height: 44px;
+      border: 3px solid rgba(255, 255, 255, 0.03);
+      border-top-color: #f43f5e;
+      border-radius: 50%;
+      animation: spin 0.9s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+      margin: 0 auto 20px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Container for the Grid */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Card Styling */
+.glass-card {
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.6), rgba(2, 4, 8, 0.8));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 24px;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 2px;
+    background: linear-gradient(90deg, #f43f5e, transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.glass-card:hover {
+    border-color: rgba(244, 63, 94, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.glass-card:hover::before { opacity: 1; }
+
+.item-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.item-desc {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top py-4" style="background: rgba(6, 8, 12, 0.95); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+    <div class="container d-flex justify-content-between align-items-center">
+      
+      <div class="logo"> 
+        <a href="../../index.html" class="d-flex align-items-center">
+          <img src="../../assets/iptv-v2/images/logo.png" alt="Bobres IPTV" style="max-height: 65px; width: auto; object-fit: contain;"> 
+        </a> 
+      </div>
+      
+      <div class="site-menu d-none d-lg-block">
+        <ul class="d-flex list-unstyled gap-4 m-0">
+          <li><a href="../../index.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 15px;">thuis</a></li>
+          <li><a href="../../reseller.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 15px;">Wederverkoper</a></li>
+          <li><a href="../../blog.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 15px;">Blog</a></li>
+          <li><a href="../../tickets.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 15px;">Tickets</a></li>
+          <li><a href="../../contact.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 15px;">Contacteer ons</a></li>
+          <li><a href="../../about.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 15px;">Over ons</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <main style="margin-top: 130px; min-height: 80vh;">
+    <section class="content-section">
+      <div class="container">
+        
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-12 text-center" style="margin-bottom: 48px;">
+            <div class="btn-group mb-4" role="group" style="gap: 12px; display: inline-flex;">
+              <button style="background: rgba(255,255,255,0.04); color: #fff; border: 1px solid rgba(255,255,255,0.06); border-radius: 30px; padding: 10px 24px;" onclick="window.location.href = '../../index.html';" type="button" class="btn btn-dark">
+                <i class="fas fa-home" style="margin-right: 8px; color: #64748b;"></i> Home
+              </button> 
+              <button style="background: #ffffff; color: #020408; border: none; border-radius: 30px; padding: 10px 24px; font-weight: 600;" onclick="window.location.href = '../../index.html#pricing-tab-content';" type="button" class="btn btn-light">
+                <i class="fas fa-bolt" style="margin-right: 8px; color: #f43f5e;"></i> Offers
+              </button> 
+            </div>
+
+            <h2 style="font-size: 38px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 14px; background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">TV CHANNELS LIBRARY</h2>
+            <a href="javascript:history.go(-1)" style="background: rgba(255,255,255,0.02); color: #64748b; border: 1px solid rgba(255,255,255,0.05); border-radius: 30px; padding: 8px 22px; font-size: 13px; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s;">
+              <i class="fas fa-arrow-left"></i> Back
+            </a>
+          </div>
+        </div>
+ 
+
+
+         <div class="container">
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6">
+                <h1 class="display-6 fw-bold">Anime Catalog</h1>
+            </div>
+          
+        </div>
+ 
+
+  <div class="row mb-4"><div class="col-12"><input type="search" id="vodSearch" class="form-control form-control-lg" placeholder="Search Anime by title or description..." aria-label="Search catalog"></div></div><p id="vodCount" style="color:#94a3b8;font-size:14px;"></p><div class="row g-4" id="mediaGrid" data-vod-type="anime" data-vod-src="../../data/vods/anime.json">
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Kimi no Na wa.            </div>
+            
+                        <div class="item-desc">
+                Movie            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Fullmetal Alchemist: Brotherhood            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Gintama°            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Steins;Gate            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Gintama&amp;#039;            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Haikyuu!!: Karasuno Koukou VS Shiratorizawa Gakuen Koukou            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Hunter x Hunter (2011)            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Ginga Eiyuu Densetsu            </div>
+            
+                        <div class="item-desc">
+                OVA            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Gintama Movie: Kanketsu-hen - Yorozuya yo Eien Nare            </div>
+            
+                        <div class="item-desc">
+                Movie            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Gintama&amp;#039;: Enchousen            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Clannad: After Story            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Koe no Katachi            </div>
+            
+                        <div class="item-desc">
+                Movie            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Gintama            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Code Geass: Hangyaku no Lelouch R2            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Haikyuu!! Second Season            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Sen to Chihiro no Kamikakushi            </div>
+            
+                        <div class="item-desc">
+                Movie            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Shigatsu wa Kimi no Uso            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Mushishi Zoku Shou 2nd Season            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Ookami Kodomo no Ame to Yuki            </div>
+            
+                        <div class="item-desc">
+                Movie            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Code Geass: Hangyaku no Lelouch            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Hajime no Ippo            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Rurouni Kenshin: Meiji Kenkaku Romantan - Tsuioku-hen            </div>
+            
+                        <div class="item-desc">
+                OVA            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Cowboy Bebop            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                One Punch Man            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Mononoke Hime            </div>
+            
+                        <div class="item-desc">
+                Movie            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Suzumiya Haruhi no Shoushitsu            </div>
+            
+                        <div class="item-desc">
+                Movie            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Monogatari Series: Second Season            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Mushishi Zoku Shou            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Mushishi            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Tengen Toppa Gurren Lagann            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Great Teacher Onizuka            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Natsume Yuujinchou Go            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Hajime no Ippo: New Challenger            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Mushishi Zoku Shou: Suzu no Shizuku            </div>
+            
+                        <div class="item-desc">
+                Movie            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Natsume Yuujinchou Shi            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Howl no Ugoku Shiro            </div>
+            
+                        <div class="item-desc">
+                Movie            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Fate/Zero 2nd Season            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Kizumonogatari II: Nekketsu-hen            </div>
+            
+                        <div class="item-desc">
+                Movie            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Monster            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Bakuman. 3rd Season            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Death Note            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Gintama°: Aizome Kaori-hen            </div>
+            
+                        <div class="item-desc">
+                OVA            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Ansatsu Kyoushitsu (TV) 2nd Season            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Haikyuu!!            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Hajime no Ippo: Rising            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Kara no Kyoukai 5: Mujun Rasen            </div>
+            
+                        <div class="item-desc">
+                Movie            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Natsume Yuujinchou San            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Ping Pong The Animation            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Mushishi Special: Hihamukage            </div>
+            
+                        <div class="item-desc">
+                Special            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Boku dake ga Inai Machi            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Yojouhan Shinwa Taikei            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Aria The Origination            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Kamisama Hajimemashita: Kako-hen            </div>
+            
+                        <div class="item-desc">
+                OVA            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Rainbow: Nisha Rokubou no Shichinin            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Re:Zero kara Hajimeru Isekai Seikatsu            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Tengen Toppa Gurren Lagann Movie: Lagann-hen            </div>
+            
+                        <div class="item-desc">
+                Movie            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Zoku Natsume Yuujinchou            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai.            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Kuroko no Basket 3rd Season            </div>
+            
+                        <div class="item-desc">
+                TV            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Steins;Gate Movie: Fuka Ryouiki no Déjà vu            </div>
+            
+                        <div class="item-desc">
+                Movie            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    
+    </section>
+  </main>
+ 
+
+<script src="../../assets/js/vod-catalog.js"></script>
+</body>
+</html>

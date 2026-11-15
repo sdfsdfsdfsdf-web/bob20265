@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Channels Directory - Best IPTV Service Provider</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #020408;
+      color: #f8fafc;
+      overflow-x: hidden;
+    }
+    
+    /* Cinematic Header Nav Framework Layout Elements */
+    .navbar, .mobile-menu {
+      background: rgba(4, 7, 13, 0.8) !important;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+    .site-menu ul li a {
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+    .site-menu ul li a:hover {
+      color: #f43f5e !important;
+    }
+
+    /* Frosted Glass Sidebar Layout Structure */
+    .category-sidebar-card {
+      background: rgba(9, 13, 22, 0.65);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 16px;
+      padding: 24px;
+      position: sticky;
+      top: 100px;
+    }
+    .search-wrapper-box {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .search-wrapper-box i {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #475569;
+      font-size: 14px;
+    }
+    .category-search-input {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 12px 16px 12px 44px;
+      color: #fff;
+      font-size: 14px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .category-search-input:focus {
+      outline: none;
+      background: rgba(0, 0, 0, 0.5);
+      border-color: #f43f5e;
+      box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.15);
+    }
+    .category-scroll-container {
+      max-height: 55vh;
+      overflow-y: auto;
+      padding-right: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    
+    /* Optimized Custom Fine Scrollbar Viewport Layers */
+    .category-scroll-container::-webkit-scrollbar {
+      width: 4px;
+    }
+    .category-scroll-container::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .category-scroll-container::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+    }
+    .category-scroll-container::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Sidebar Dynamic Selection Target Chips */
+    .category-btn {
+      background: rgba(255, 255, 255, 0.01);
+      color: #64748b;
+      border: 1px solid rgba(255, 255, 255, 0.02) !important;
+      border-radius: 10px !important;
+      padding: 12px 16px;
+      font-weight: 500;
+      font-size: 14px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .category-btn .cat-label-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .category-btn .cat-badge-counter {
+      font-size: 11px;
+      background: rgba(255, 255, 255, 0.04);
+      color: #475569;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .category-btn:hover {
+      background: rgba(255, 255, 255, 0.03);
+      color: #cbd5e1;
+      transform: translateX(4px);
+    }
+    .category-btn.active {
+      background: linear-gradient(135deg, #f43f5e, #be123c) !important;
+      color: #ffffff !important;
+      border-color: #f43f5e !important;
+      box-shadow: 0 4px 20px rgba(244, 63, 94, 0.2);
+    }
+    .category-btn.active .cat-badge-counter {
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+    }
+
+    /* Multimedia Visual TV Theater Grid Items Aspect Cards */
+    .movie-theater-card {
+      background: rgba(9, 13, 22, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .movie-poster-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 145%; /* Cinematic Vertical Layout Matrix Ratio */
+      background: #05070c;
+      overflow: hidden;
+    }
+    .movie-poster-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+    .movie-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(2, 4, 8, 0.95) 10%, rgba(2, 4, 8, 0.3) 60%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+    }
+    .movie-theater-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(244, 63, 94, 0.3);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+    }
+    .movie-theater-card:hover .movie-poster-img {
+      transform: scale(1.05);
+      filter: brightness(0.75);
+    }
+    .movie-theater-card:hover .movie-card-overlay {
+      opacity: 1;
+    }
+    .movie-details-pane {
+      padding: 14px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: rgba(5, 8, 14, 0.7);
+    }
+    .movie-title-text {
+      font-weight: 600;
+      color: #f1f5f9;
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 6px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 38px;
+    }
+    .movie-tag-badge {
+      font-size: 10px;
+      background: rgba(244, 63, 94, 0.08);
+      color: #f43f5e;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    /* Specific styling for series episode badge tracking */
+    .series-ep-badge {
+      font-size: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #94a3b8;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    /* Premium Frame Control Metric Pagination System Nodes */
+    .page-link-custom {
+      background: rgba(255, 255, 255, 0.02);
+      color: #64748b;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      min-width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 3px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+    }
+    .page-link-custom:hover:not(.disabled):not(.active) {
+      background: rgba(255, 255, 255, 0.06);
+      color: #f1f5f9;
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+    .page-link-custom.active {
+      background: #f43f5e;
+      color: #fff;
+      border-color: #f43f5e;
+      box-shadow: 0 0 15px rgba(244, 63, 94, 0.25);
+    }
+    .page-link-custom.disabled {
+      opacity: 0.2;
+      cursor: not-allowed;
+    }
+
+    /* Synchronized Execution Phase Loading Module */
+    #loading_spinner {
+      padding: 80px 0;
+      text-align: center;
+    }
+    .spinner-icon {
+      width: 44px;
+      height: 44px;
+      border: 3px solid rgba(255, 255, 255, 0.03);
+      border-top-color: #f43f5e;
+      border-radius: 50%;
+      animation: spin 0.9s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+      margin: 0 auto 20px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Container for the Grid */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Card Styling */
+.glass-card {
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.6), rgba(2, 4, 8, 0.8));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 24px;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 2px;
+    background: linear-gradient(90deg, #f43f5e, transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.glass-card:hover {
+    border-color: rgba(244, 63, 94, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.glass-card:hover::before { opacity: 1; }
+
+.item-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.item-desc {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top py-4" style="background: rgba(6, 8, 12, 0.95); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+    <div class="container d-flex justify-content-between align-items-center">
+      
+      <div class="logo"> 
+        <a href="../../index.html" class="d-flex align-items-center">
+          <img src="../../assets/iptv-v2/images/logo.png" alt="Bobres IPTV" style="max-height: 65px; width: auto; object-fit: contain;"> 
+        </a> 
+      </div>
+      
+      <div class="site-menu d-none d-lg-block">
+        <ul class="d-flex list-unstyled gap-4 m-0">
+          <li><a href="../../index.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 15px;">Accueil</a></li>
+          <li><a href="../../reseller.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 15px;">Revendeur</a></li>
+          <li><a href="../../blog.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 15px;">Blog</a></li>
+          <li><a href="../../tickets.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 15px;">Tickets</a></li>
+          <li><a href="../../contact.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 15px;">Contacter</a></li>
+          <li><a href="../../about.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 15px;">A propos</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <main style="margin-top: 130px; min-height: 80vh;">
+    <section class="content-section">
+      <div class="container">
+        
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-12 text-center" style="margin-bottom: 48px;">
+            <div class="btn-group mb-4" role="group" style="gap: 12px; display: inline-flex;">
+              <button style="background: rgba(255,255,255,0.04); color: #fff; border: 1px solid rgba(255,255,255,0.06); border-radius: 30px; padding: 10px 24px;" onclick="window.location.href = '../../index.html';" type="button" class="btn btn-dark">
+                <i class="fas fa-home" style="margin-right: 8px; color: #64748b;"></i> Home
+              </button> 
+              <button style="background: #ffffff; color: #020408; border: none; border-radius: 30px; padding: 10px 24px; font-weight: 600;" onclick="window.location.href = '../../index.html#pricing-tab-content';" type="button" class="btn btn-light">
+                <i class="fas fa-bolt" style="margin-right: 8px; color: #f43f5e;"></i> Offers
+              </button> 
+            </div>
+
+            <h2 style="font-size: 38px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 14px; background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">TV CHANNELS LIBRARY</h2>
+            <a href="javascript:history.go(-1)" style="background: rgba(255,255,255,0.02); color: #64748b; border: 1px solid rgba(255,255,255,0.05); border-radius: 30px; padding: 8px 22px; font-size: 13px; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s;">
+              <i class="fas fa-arrow-left"></i> Back
+            </a>
+          </div>
+        </div>
+ 
+
+
+         <div class="container">
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6">
+                <h1 class="display-6 fw-bold">Apple-tv Catalog</h1>
+            </div>
+          
+        </div>
+ 
+
+  <div class="row mb-4"><div class="col-12"><input type="search" id="vodSearch" class="form-control form-control-lg" placeholder="Search Apple-tv by title or description..." aria-label="Search catalog"></div></div><p id="vodCount" style="color:#94a3b8;font-size:14px;"></p><div class="row g-4" id="mediaGrid" data-vod-type="apple-tv" data-vod-src="../../data/vods/apple-tv.json">
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                A Charlie Brown Christmas            </div>
+            
+                        <div class="item-desc">
+                When Charlie Brown complains about the overwhelming materialism that he sees amongst everyone during the Christmas season, Lucy suggests that he become director of the school Christmas pageant. Charlie Brown accepts, but is a frustrating struggle. When an attempt to restore the proper spirit with a forlorn little fir Christmas tree fails, he needs Linus&#039; help to learn the meaning of Christmas.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                It&#039;s the Great Pumpkin, Charlie Brown            </div>
+            
+                        <div class="item-desc">
+                This classic &quot;Peanuts&quot; tale focuses on the thumb-sucking, blanket-holding Linus, and his touching faith in the &quot;Great Pumpkin.&quot; When Linus discovers that no one else believes in the creature, he sets out to prove that the Pumpkin&#039;s no myth—by spending the night alone in a pumpkin patch.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                A Charlie Brown Thanksgiving            </div>
+            
+                        <div class="item-desc">
+                Turkey, cranberries, pumpkin pie... and the Peanuts gang to share them with. This is going to be the greatest Thanksgiving ever! The fun begins when Peppermint Patty invites herself and her pals to Charlie Brown&#039;s house for a REALLY big turkey party. Good grief! All our hero can cook is cold cereal and maybe toast. Is Charlie Brown doomed? Not when Linus, Snoopy and Woodstock chip in to save the (Thanksgiving) Day. With such good friends, Charlie Brown - and all of us - have so many reasons to be thankful.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Be My Valentine, Charlie Brown            </div>
+            
+                        <div class="item-desc">
+                It&#039;s Valentine&#039;s Day again and Charlie Brown dreams the seemingly hopeless dream to receiving a valentine from anyone. All the while, the rest of the gang have their own trials whether it be Linus&#039; struggle to get the biggest card he can for his beloved teacher, or Lucy trying to get some token from Schroeder while Snoopy and Woodstock are having fun spearing valentines on each other&#039;s nose.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                It&#039;s the Easter Beagle, Charlie Brown            </div>
+            
+                        <div class="item-desc">
+                Charlie Brown, Linus and the entire Peanuts gang are off on a lively Easter egg hunt. They suspect they&#039;ve spotted the Easter Bunny … but the trouble is, he looks a lot like a certain beagle who&#039;s near and dear to Charlie Brown&#039;s heart. Is it truly the Easter Bunny, or is it just the irrepressible Snoopy playing a trick on the kids?            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Fraggle Rock            </div>
+            
+                        <div class="item-desc">
+                The Fraggles are a fun-loving community of creatures who live in a subterranean fantasy land where they love to play, sing and dance their cares away, sharing their world with the tiny Doozers and the giant Gorgs. The series teaches empathy and tolerance and encourages children to understand people different from themselves.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Happy New Year, Charlie Brown            </div>
+            
+                        <div class="item-desc">
+                It&#039;s the night of Peppermint Patty’s New Year’s Eve bash, but Charlie Brown has to write a book report about War and Peace. Hoping to join the fun for a special dance with the Little Red-Haired Girl, he tries desperately to finish in time.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Out of Sight            </div>
+            
+                        <div class="item-desc">
+                Meet Jack Foley, a smooth criminal who bends the law and is determined to make one last heist. Karen Sisco is a federal marshal who chooses all the right moves … and all the wrong guys. Now they&#039;re willing to risk it all to find out if there&#039;s more between them than just the law.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Entrapment            </div>
+            
+                        <div class="item-desc">
+                Two thieves, who travel in elegant circles, try to outsmart each other and, in the process, end up falling in love.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                It&#039;s Christmastime Again, Charlie Brown            </div>
+            
+                        <div class="item-desc">
+                As the holiday season rolls around and all the Peanuts gang are getting ready for it. Whether it be Charlie Brown struggling to raise money for his girlfriend or Sally and Peppermint Patty struggling to rehearse and memorize their one word lines for the Christmas pageant, these kids try to keep with the Christmas spirit while Snoopy has his mischief to do.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                The Italian Job            </div>
+            
+                        <div class="item-desc">
+                Charlie Croker pulled off the crime of a lifetime. The one thing that he didn&#039;t plan on was being double-crossed. Along with a drop-dead gorgeous safecracker, Croker and his team take off to re-steal the loot and end up in a pulse-pounding, pedal-to-the-metal chase that careens up, down, above and below the streets of Los Angeles.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Matchstick Men            </div>
+            
+                        <div class="item-desc">
+                A phobic con artist and his protege are on the verge of pulling off a lucrative swindle when the con artist&#039;s teenage daughter arrives unexpectedly.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Long Way Round            </div>
+            
+                        <div class="item-desc">
+                In 2004 Ewan McGregor and Charley Boorman embarked on an epic challenge to bike 20,000-miles across 12 countries and 19 time zones in just 115 days. Watch as two friends ride around the world together and, against all the odds, realize their dream.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Long Way Down            </div>
+            
+                        <div class="item-desc">
+                Three years after Long Way Round, Ewan McGregor and Charley Boorman set off on a 15,000-mile journey from the northernmost tip of Scotland to the southernmost tip of South Africa, mixing their love of motorcycles with the lure of far-flung roads.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                I Want a Dog for Christmas, Charlie Brown            </div>
+            
+                        <div class="item-desc">
+                Linus and Lucy&#039;s younger brother Rerun wants a dog for Christmas, and Snoopy&#039;s brother Spike may be the answer.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Charlie Brown&#039;s Christmas Tales            </div>
+            
+                        <div class="item-desc">
+                Tis the season for the cheer and charm of the Peanuts kids - and this delight special offers five segments full of unforgettable moments. Snoopy works as a bell-ringer to raise money and tries making peace with the ferocious cat next door. Linus strives to strike the right tone in his letter to Santa - and his friendship with an indecisive girl at school. Sally&#039;s idea about gift giving and the identity of Santa may be unusual - but her strange notion about how to obtain a Christmas tree surprisingly does the job. Lucy tries awfully hard to be nice...and still coax everyone around her to buy her presents. Charlie Brown and Sally wait up for Santa (a surprisingly short man), who spreads Christmas gift cheer further than they had thought. Make merry!            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                A Charlie Brown Valentine            </div>
+            
+                        <div class="item-desc">
+                Lovesick Charlie Brown hopes – still – to get a valentine from the Little Red-Haired Girl, as does Sally from Linus, Lucy from Schroeder and Peppermint Patty from Charlie Brown.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                The Five-Year Engagement            </div>
+            
+                        <div class="item-desc">
+                Exactly one year after Tom meets Violet, he surprises her with a wedding ring. By all accounts, Tom and Violet are destined for their happily ever after. However, this engaged couple just keep getting tripped up on the long walk down the aisle.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Carpool Karaoke: The Series            </div>
+            
+                        <div class="item-desc">
+                Celebrity pairings ride along in a car together as they sing tunes from their personal playlists and surprise fans who don’t expect to see big stars belting out tunes one lane over. Based on the segment on The Late Late Show with James Corden.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Ted Lasso            </div>
+            
+                        <div class="item-desc">
+                Ted Lasso, an American football coach, moves to England when he’s hired to manage a soccer team—despite having no experience. With cynical players and a doubtful town, will he get them to see the Ted Lasso Way?            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Servant            </div>
+            
+                        <div class="item-desc">
+                A Philadelphia couple are in mourning after an unspeakable tragedy creates a rift in their marriage and opens the door for a mysterious force to enter their home.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                For All Mankind            </div>
+            
+                        <div class="item-desc">
+                Explore an aspirational world where NASA and the space program remained a priority and a focal point of our hopes and dreams as told through the lives of NASA astronauts, engineers, and their families.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Mythic Quest            </div>
+            
+                        <div class="item-desc">
+                Meet the team behind the biggest multiplayer video game of all time. But in a workplace focused on building worlds, molding heroes, and creating legends, the most hard-fought battles don’t occur in the game—they happen in the office.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Truth Be Told            </div>
+            
+                        <div class="item-desc">
+                Descend into the world of true-crime podcasts with Poppy Parnell, who risks everything—including her life—to pursue truth and justice.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                The Morning Show            </div>
+            
+                        <div class="item-desc">
+                A behind-the-scenes look at the lives of the people who help America wake up in the morning, exploring the unique challenges faced by the men and women who carry out this daily televised ritual.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                See            </div>
+            
+                        <div class="item-desc">
+                A virus has decimated humankind. Those who survived emerged blind. Centuries later when twins are born with the mythic ability to see, their father must protect his tribe against a threatened queen.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                The Banker            </div>
+            
+                        <div class="item-desc">
+                In the 1960s, two African-American entrepreneurs hire a working-class white man to pretend to be the head of their business empire while they pose as a janitor and chauffeur.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Greyhound            </div>
+            
+                        <div class="item-desc">
+                A first-time captain leads a convoy of allied ships carrying thousands of soldiers across the treacherous waters of the “Black Pit” to the front lines of WW2. With no air cover protection for 5 days, the captain and his convoy must battle the surrounding enemy Nazi U-boats in order to give the allies a chance to win the war.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Amazing Stories            </div>
+            
+                        <div class="item-desc">
+                Each episode transports the audience to worlds of wonder through the lens of today’s most imaginative filmmakers, directors and writers. A reimagining of the original anthology series by Steven Spielberg.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Tehran            </div>
+            
+                        <div class="item-desc">
+                A Mossad agent embarks on her first mission as a computer hacker in her home town of Tehran.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Little America            </div>
+            
+                        <div class="item-desc">
+                An anthology series that goes beyond the headlines to look at the funny, romantic, heartfelt, inspiring and surprising stories of immigrants in America at a time when they are more relevant than ever.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Trying            </div>
+            
+                        <div class="item-desc">
+                All Nikki and Jason want is a baby—the one thing they can’t have. So they decide to adopt. With their dysfunctional friends, screwball families, and chaotic lives, will the adoption panel agree that they’re ready to be parents?            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Dickinson            </div>
+            
+                        <div class="item-desc">
+                Emily Dickinson. Poet. Daughter. Total rebel. In this coming-of-age story, Emily’s determined to become the world’s greatest poet.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Defending Jacob            </div>
+            
+                        <div class="item-desc">
+                A family’s lives are irreparably disrupted when the 14-year-old son is accused of murdering a fellow classmate.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Central Park            </div>
+            
+                        <div class="item-desc">
+                An animated musical series that tells the story of how a family of caretakers, who live and work in Central Park, end up saving the park and basically the world.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Home            </div>
+            
+                        <div class="item-desc">
+                A never-before-seen look inside the world’s most innovative homes with each episode unveiling the boundary-pushing imagination of the visionaries who dared to dream and build them.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Home Before Dark            </div>
+            
+                        <div class="item-desc">
+                A young girl from the big city uncovers clues to an unsolved cold case while visiting her father&#039;s small lakeside town.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Ghostwriter            </div>
+            
+                        <div class="item-desc">
+                When a ghost haunts a neighborhood bookstore and starts releasing fictional characters into the real world, four kids must team up to solve an exciting mystery surrounding the ghost’s unfinished business.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Fireball: Visitors from Darker Worlds            </div>
+            
+                        <div class="item-desc">
+                This remarkable journey across our planet and universe explores how meteorites, shooting stars, and deep impacts have awoken our wonder about other realms—and make us rethink our destinies.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Wolfwalkers            </div>
+            
+                        <div class="item-desc">
+                In a time of superstition and magic, when wolves are seen as demonic and nature an evil to be tamed, a young apprentice hunter comes to Ireland with her father to wipe out the last pack. But when she saves a wild native girl, their friendship leads her to discover the world of the Wolfwalkers and transform her into the very thing her father is tasked to destroy.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Beastie Boys Story            </div>
+            
+                        <div class="item-desc">
+                Here’s a little story they’re about to tell… Mike Diamond and Adam Horovitz share the story of their band and 40 years of friendship in a live documentary directed by friend, collaborator, and their former grandfather, Spike Jonze.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Long Way Up            </div>
+            
+                        <div class="item-desc">
+                Follow Ewan McGregor and his friend Charley Boorman as they travel on electric Harley-Davidsons 13,000 miles through Central and South America. A follow up to previous series Long Way Round and Long Way Down.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                On the Rocks            </div>
+            
+                        <div class="item-desc">
+                Faced with sudden doubts about her marriage, a young New York mother teams up with her larger-than-life playboy father to tail her husband.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Boys State            </div>
+            
+                        <div class="item-desc">
+                In an unusual experiment, a thousand 17-year-old boys from Texas join together to build a representative government from the ground up.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Tiny World            </div>
+            
+                        <div class="item-desc">
+                This docuseries showcases nature&#039;s lesser-known tiny heroes. Spotlighting small creatures and the extraordinary things they do to survive, each episode is filled with surprising stories and spectacular cinematography.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Oprah&#039;s Book Club            </div>
+            
+                        <div class="item-desc">
+                Get a front row seat to unguarded conversations with incredible authors. It’s a book club for today’s world.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Visible: Out On Television            </div>
+            
+                        <div class="item-desc">
+                Explore the history of the LGBTQ movement through the lens of TV in this five-part docuseries. Combining archival footage with new interviews, it looks at homophobia, invisibility, the evolution of LGBTQ characters, and coming out in the TV industry.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Greatness Code            </div>
+            
+                        <div class="item-desc">
+                Iconic athletes pull back the curtain on a pivotal career moment when they touched greatness. A stylized hybrid of live action and visual effects, this short-form docuseries sheds new light on the sports legends you thought you knew.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Losing Alice            </div>
+            
+                        <div class="item-desc">
+                The story of Alice, an ambitious 47 year old female film director who becomes obsessed with 24 year old femme-fatale Sophie and eventually surrenders all moral integrity in order to achieve power, success and unlimited relevance.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                The Oprah Conversation            </div>
+            
+                        <div class="item-desc">
+                Oprah leads intimate discussions with today’s foremost newsmakers, thought leaders, and masters of their craft. Bringing truth and perspective to a range of topics shaping our world, they reveal gripping stories of human connection.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Fraggle Rock: Rock On!            </div>
+            
+                        <div class="item-desc">
+                The Fraggles might be apart in separate caves, but they can still find ways to have fun together! Join Gobo, Red, Boober, Mokey, Wembley, and Uncle Travelling Matt for stories and songs that show everyone how we&#039;re all connected.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Hala            </div>
+            
+                        <div class="item-desc">
+                Meet 17-year-old Hala, who struggles to balance being a suburban teenager with her traditional Muslim upbringing. As she comes into her own, Hala finds herself grappling with a secret that threatens to unravel her family.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Earth at Night in Color            </div>
+            
+                        <div class="item-desc">
+                Filmed across six continents, this docuseries uses cutting-edge camera technology to capture animals&#039; nocturnal lives, revealing new behaviours filmed in full color like never before.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Stillwater            </div>
+            
+                        <div class="item-desc">
+                Siblings Karl, Addy and Michael have a very special next-door neighbor: a wise panda named Stillwater. His friendship and stories give them new perspectives on the world, themselves, and each other.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Little Voice            </div>
+            
+                        <div class="item-desc">
+                A love letter to the diverse musicality of New York, it explores the universal journey of finding your authentic voice in your early twenties.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Snoopy in Space            </div>
+            
+                        <div class="item-desc">
+                Blast off with Snoopy as he fulfills his dream to become a NASA astronaut. Joined by Charlie Brown and the rest of the Peanuts gang, Snoopy takes command of the International Space Station and explores the moon and beyond.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                The Elephant Queen            </div>
+            
+                        <div class="item-desc">
+                Join Athena, the majestic matriarch, as she leads her elephant herd across an unforgiving African landscape.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Bruce Springsteen&#039;s Letter to You            </div>
+            
+                        <div class="item-desc">
+                A tribute to The E Street Band, rock ‘n’ roll, and the way music has shaped Bruce Springsteen’s life, this documentary captures Bruce reflecting on love and loss while recording with his full band for the first time since Born in the U.S.A.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Dear...            </div>
+            
+                        <div class="item-desc">
+                An inventive approach to biographies of iconic figures in society by using letters written by those whose lives have been changed through their work.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 media-item">
+        <div class="glass-card">
+            <div class="item-title">
+                <i class="fas fa-play-circle text-danger me-2" style="font-size: 0.9rem;"></i>
+                Becoming You            </div>
+            
+                        <div class="item-desc">
+                Told through the eyes of over 100 kids across the globe, this docuseries chronicles how children learn to think, speak, move, and love from birth to age five.            </div>
+            
+            <div class="mt-3">
+                <span class="text-uppercase" style="font-size: 0.7rem; color: #f43f5e; letter-spacing: 1px; font-weight: 800;">
+                    Streaming Now
+                </span>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    
+    </section>
+  </main>
+ 
+
+<script src="../../assets/js/vod-catalog.js"></script>
+</body>
+</html>
