@@ -206,7 +206,7 @@
     var text = compose();
     if (!text) return;
     var subject = read('Subject') || 'Support request';
-    window.location.href = 'mailto:bobres.renew@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(text);
+    window.location.href = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(text);
   });
   btn.parentNode.appendChild(mail);
 })();
