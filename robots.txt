@@ -2,4 +2,4 @@
 User-agent: *
 Disallow: /data/
 
-Sitemap: https://bobres-tv.com/sitemap.xml
+Sitemap: https://bobres.top/sitemap.xml
