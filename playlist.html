@@ -493,7 +493,7 @@ table.dataTable thead .sorting_desc_disabled:before { bottom: .5em; }
   function changeLang() {
     var sel = document.getElementById('select_lang');
     if (!sel) return;
-    var map = {"en":"playlist.html","de":"de/playlist.html","fr":"fr/playlist.html","es":"es/playlist.html","nl":"nl/playlist.html"};
+    var map = {"en":"#playlist","de":"de/playlist.html","fr":"fr/playlist.html","es":"es/playlist.html","nl":"nl/playlist.html"};
     var target = map[sel.value] || map.en;
     if (target) window.location.href = target;
   }
